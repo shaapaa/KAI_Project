@@ -1,0 +1,100 @@
+
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import { 
+  Home, 
+  User, 
+  Target, 
+  Users, 
+  Network, 
+  Building, 
+  Camera, 
+  Ticket, 
+  BarChart3, 
+  AppWindow, 
+  Train, 
+  Map,
+  ChevronLeft,
+  ChevronRight
+} from 'lucide-react';
+import { cn } from '@/lib/utils';
+
+const menuItems = [
+  { path: '/', icon: Home, label: 'Dashboard' },
+  { path: '/profil', icon: User, label: 'Profil Divisi IT' },
+  { path: '/visi-misi', icon: Target, label: 'Visi, Misi & KPI' },
+  { path: '/struktur-organisasi', icon: Users, label: 'Struktur Organisasi' },
+  { path: '/infrastruktur-jaringan', icon: Network, label: 'Infrastruktur Jaringan' },
+  { path: '/data-stasiun', icon: Building, label: 'Data Stasiun' },
+  { path: '/data-cctv', icon: Camera, label: 'Data CCTV' },
+  { path: '/layanan-ticketing', icon: Ticket, label: 'Layanan Ticketing' },
+  { path: '/rekapitulasi-tiket', icon: BarChart3, label: 'Rekapitulasi Tiket' },
+  { path: '/aplikasi-internal', icon: AppWindow, label: 'Aplikasi Internal' },
+  { path: '/data-lokotrack', icon: Train, label: 'Data Lokotrack' },
+  { path: '/peta-wilayah', icon: Map, label: 'Peta Wilayah' },
+];
+
+const Sidebar = () => {
+  const [collapsed, setCollapsed] = useState(false);
+
+  return (
+    <div className={cn(
+      "bg-blue-900 text-white transition-all duration-300 flex flex-col",
+      collapsed ? "w-16" : "w-64"
+    )}>
+      {/* Header */}
+      <div className="p-4 border-b border-blue-800">
+        <div className="flex items-center justify-between">
+          {!collapsed && (
+            <div>
+              <h1 className="text-lg font-bold">KAI Divre IV</h1>
+              <p className="text-sm text-blue-200">Tanjungkarang</p>
+            </div>
+          )}
+          <button
+            onClick={() => setCollapsed(!collapsed)}
+            className="p-1 hover:bg-blue-800 rounded"
+          >
+            {collapsed ? <ChevronRight size={20} /> : <ChevronLeft size={20} />}
+          </button>
+        </div>
+      </div>
+
+      {/* Navigation */}
+      <nav className="flex-1 p-2">
+        <ul className="space-y-1">
+          {menuItems.map((item) => (
+            <li key={item.path}>
+              <NavLink
+                to={item.path}
+                className={({ isActive }) =>
+                  cn(
+                    "flex items-center p-3 rounded-lg transition-colors",
+                    "hover:bg-blue-800",
+                    isActive && "bg-blue-700 text-white",
+                    collapsed ? "justify-center" : "space-x-3"
+                  )
+                }
+              >
+                <item.icon size={20} />
+                {!collapsed && <span className="text-sm">{item.label}</span>}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      {/* Footer */}
+      <div className="p-4 border-t border-blue-800">
+        {!collapsed && (
+          <div className="text-xs text-blue-200 text-center">
+            <p>© 2024 PT KAI</p>
+            <p>Divisi Regional IV</p>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default Sidebar;
