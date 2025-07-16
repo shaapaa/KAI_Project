@@ -5,79 +5,45 @@ import { Users, User, Mail, Phone, MapPin, Award } from 'lucide-react';
 
 const StrukturOrganisasi = () => {
   const struktur = {
-    manager: {
-      nama: 'Ir. Ahmad Sukardi, M.T.',
-      jabatan: 'Manager IT Divre IV',
-      nip: '19750515 199803 1 002',
+    manager : {
+      nama: 'Kemas Erwin Gauthama',
+      jabatan: 'Manager Sistem Informasi Divre IV',
+      nip: '41966',
       email: 'ahmad.sukardi@kereta-api.co.id',
       phone: '(0721) 253-754',
       pendidikan: 'S2 Teknik Informatika',
       pengalaman: '15 Tahun'
     },
-    asisten: [
+    asisten_manager: [
       {
-        nama: 'Sari Indrawati, S.Kom.',
-        jabatan: 'Asisten Manager IT',
-        nip: '19820308 200604 2 001',
-        email: 'sari.indrawati@kereta-api.co.id',
-        bidang: 'Infrastruktur & Jaringan'
+        nama: 'Syahril Ramadhan',
+        jabatan: 'Asisten Manager Sistem Informasi Divre IV',
+        nip: '57534'
       },
       {
-        nama: 'Bambang Prasetyo, S.T.',
-        jabatan: 'Asisten Manager IT',
-        nip: '19790621 200203 1 003',
-        email: 'bambang.prasetyo@kereta-api.co.id',
-        bidang: 'Sistem Aplikasi & Database'
+        nama: 'Panji Pratama',
+        jabatan: 'Asisten Manager Sistem Informasi Divre IV',
+        nip: '51556'
       }
     ],
-    supervisor: [
+    Pelaksana_IT_Support: [
       {
-        nama: 'Rina Marlina, S.Kom.',
-        jabatan: 'Supervisor IT Network',
-        tim: 'Network & Infrastructure',
-        lokasi: 'Bandar Lampung'
+        nama: 'Suyamdi',
+        jabatan: 'Pelaksana IT Support',
+        nip: '46626',
       },
       {
-        nama: 'Dedi Kurniawan, S.T.',
-        jabatan: 'Supervisor IT Security',
-        tim: 'Security & CCTV',
-        lokasi: 'Bandar Lampung'
+        nama: 'Bertha Winda S.',
+        jabatan: 'Pelaksana IT Support',
+        nip: '51234',
       },
       {
-        nama: 'Fitri Handayani, S.Kom.',
-        jabatan: 'Supervisor IT Support',
-        tim: 'User Support & Ticketing',
-        lokasi: 'Bandar Lampung'
+        nama: 'Ahmad ',
+        jabatan: 'Pelaksana IT Support',
+        nip: '47890',
       },
-      {
-        nama: 'Rudi Hartono, A.Md.',
-        jabatan: 'Supervisor IT Field',
-        tim: 'Field Operations',
-        lokasi: 'Kotabumi'
-      }
     ]
   };
-
-  const pegawaiTetap = [
-    { nama: 'Andi Wijaya, S.Kom.', jabatan: 'Network Administrator', unit: 'Network Team' },
-    { nama: 'Siti Nurhaliza, S.T.', jabatan: 'Database Administrator', unit: 'Database Team' },
-    { nama: 'Fajar Sidik, A.Md.', jabatan: 'System Administrator', unit: 'Infrastructure Team' },
-    { nama: 'Maya Sari, S.Kom.', jabatan: 'Application Developer', unit: 'Development Team' },
-    { nama: 'Rizki Pratama, S.T.', jabatan: 'Security Analyst', unit: 'Security Team' },
-    { nama: 'Dewi Lestari, A.Md.', jabatan: 'Technical Support', unit: 'Support Team' },
-    { nama: 'Agus Setiawan, S.Kom.', jabatan: 'CCTV Technician', unit: 'Security Team' },
-    { nama: 'Lina Marlina, A.Md.', jabatan: 'Help Desk Officer', unit: 'Support Team' },
-    { nama: 'Hendra Gunawan, S.T.', jabatan: 'Field Engineer', unit: 'Field Team' },
-    { nama: 'Yuli Astuti, S.Kom.', jabatan: 'Data Analyst', unit: 'Analytics Team' }
-  ];
-
-  const outsourcing = [
-    { nama: 'PT Telkom Indonesia', layanan: 'Network Infrastructure', jumlah: '8 Orang' },
-    { nama: 'PT Indosat Ooredoo', layanan: 'Telecommunication', jumlah: '5 Orang' },
-    { nama: 'PT Datascrip', layanan: 'Hardware Maintenance', jumlah: '6 Orang' },
-    { nama: 'PT Metrodata', layanan: 'Software Support', jumlah: '4 Orang' },
-    { nama: 'PT Multipolar Technology', layanan: 'System Integration', jumlah: '5 Orang' }
-  ];
 
   return (
     <div className="space-y-6">
@@ -112,32 +78,31 @@ const StrukturOrganisasi = () => {
 
           {/* Assistants */}
           <div className="flex justify-center gap-8 mb-8">
-            {struktur.asisten.map((asisten, index) => (
+            {struktur.asisten_manager.map((asisten_manager, index) => (
               <div key={index} className="p-4 bg-green-100 rounded-lg border border-green-300 flex-1 max-w-xs">
                 <div className="text-center">
                   <div className="flex items-center justify-center mb-2">
                     <User className="h-6 w-6 text-green-600" />
                   </div>
-                  <h4 className="font-semibold text-green-900">{asisten.nama}</h4>
-                  <p className="text-green-700 text-sm">{asisten.jabatan}</p>
-                  <p className="text-xs text-green-600">{asisten.bidang}</p>
+                  <h4 className="font-semibold text-green-900">{asisten_manager.nama}</h4>
+                  <p className="text-green-700 text-sm">{asisten_manager.jabatan}</p>
+                  <p className="text-xs text-green-600">NIP: {asisten_manager.nip}</p>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Supervisors */}
+          {/* Pelaksana */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {struktur.supervisor.map((supervisor, index) => (
+            {struktur.Pelaksana_IT_Support.map((Pelaksana_IT_Support, index) => (
               <div key={index} className="p-4 bg-orange-100 rounded-lg border border-orange-300">
                 <div className="text-center">
                   <div className="flex items-center justify-center mb-2">
                     <User className="h-5 w-5 text-orange-600" />
                   </div>
-                  <h5 className="font-semibold text-orange-900 text-sm">{supervisor.nama}</h5>
-                  <p className="text-orange-700 text-xs">{supervisor.jabatan}</p>
-                  <p className="text-xs text-orange-600">{supervisor.tim}</p>
-                  <p className="text-xs text-orange-500">{supervisor.lokasi}</p>
+                  <h5 className="font-semibold text-orange-900 text-sm">{Pelaksana_IT_Support.nama}</h5>
+                  <p className="text-orange-700 text-xs">{Pelaksana_IT_Support.jabatan}</p>
+                  <p className="text-xs text-orange-600">NIP: {Pelaksana_IT_Support.nip}</p>
                 </div>
               </div>
             ))}
@@ -194,69 +159,6 @@ const StrukturOrganisasi = () => {
           </div>
         </CardContent>
       </Card>
-
-      {/* Staff Data */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Pegawai Tetap */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center justify-between">
-              <div className="flex items-center space-x-2">
-                <Users className="h-5 w-5" />
-                <span>Pegawai Tetap</span>
-              </div>
-              <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
-                {pegawaiTetap.length} Orang
-              </span>
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-3">
-              {pegawaiTetap.map((pegawai, index) => (
-                <div key={index} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                  <div>
-                    <p className="font-medium text-gray-900">{pegawai.nama}</p>
-                    <p className="text-sm text-gray-600">{pegawai.jabatan}</p>
-                  </div>
-                  <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded">
-                    {pegawai.unit}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Outsourcing */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center justify-between">
-              <div className="flex items-center space-x-2">
-                <Users className="h-5 w-5" />
-                <span>Outsourcing Partners</span>
-              </div>
-              <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
-                28 Orang
-              </span>
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-3">
-              {outsourcing.map((partner, index) => (
-                <div key={index} className="p-3 bg-gray-50 rounded-lg">
-                  <div className="flex items-center justify-between mb-2">
-                    <p className="font-medium text-gray-900">{partner.nama}</p>
-                    <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">
-                      {partner.jumlah}
-                    </span>
-                  </div>
-                  <p className="text-sm text-gray-600">{partner.layanan}</p>
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-      </div>
 
       {/* Summary Statistics */}
       <Card>
