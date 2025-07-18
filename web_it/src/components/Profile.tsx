@@ -43,7 +43,7 @@ const Profile = () => {
             <div>
               <h4 className="font-semibold text-gray-900 mb-2">Lokasi Kantor Pusat</h4>
               <p className="text-gray-600 text-sm">
-                Jl. Kotaraja No. 6, Tanjungkarang, Bandar Lampung, Lampung 35214
+                Jl. Teuku Umar No.23 35121 Bandar Lampung
               </p>
             </div>
           </CardContent>
@@ -160,7 +160,7 @@ const Profile = () => {
             <div>
               <h4 className="font-semibold text-gray-900 mb-2">Alamat</h4>
               <p className="text-sm text-gray-600">
-                Jl. Kotaraja No. 6<br/>
+                Jl. Teuku Umar No.23<br/>
                 Tanjungkarang<br/>
                 Bandar Lampung, Lampung 35214
               </p>
@@ -169,8 +169,7 @@ const Profile = () => {
             <div>
               <h4 className="font-semibold text-gray-900 mb-2">Telepon</h4>
               <p className="text-sm text-gray-600">
-                Phone: (0721) 253-754<br/>
-                Fax: (0721) 253-755<br/>
+                Phone: <br/>
                 Emergency: (0721) 253-911
               </p>
             </div>
