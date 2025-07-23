@@ -1,7 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { User } from 'lucide-react';
-import logoBUMN from '@/assests/logo-bumn.png';
-import logoKAI from '@/assests/logo-kai.png'; // Pastikan path dan nama file benar
+
+import logoBUMN from '@/assests/logo-bumn.png'; // ✅ pastikan "assets" bukan "assests"
+import logoKAI from '@/assests/kai.jpg';
 
 const Header = () => {
   return (
@@ -31,16 +33,16 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Kanan: Profil Admin */}
-        <div className="flex items-center space-x-2">
+        {/* Kanan: Profil Admin (Link ke Login Admin) */}
+        <Link to="/admin-login" className="flex items-center space-x-2 hover:opacity-80">
           <div className="w-9 h-9 bg-blue-600 rounded-full flex items-center justify-center">
             <User size={18} className="text-white" />
           </div>
-          <div className="hidden md:block">
+          <div className="hidden md:block text-right">
             <p className="text-sm font-medium text-gray-700">Admin IT</p>
             <p className="text-xs text-gray-500">Divre IV TNK</p>
           </div>
-        </div>
+        </Link>
       </div>
     </header>
   );
