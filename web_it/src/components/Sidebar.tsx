@@ -17,6 +17,7 @@ import {
   ChevronRight
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import logoKai from '@/assests/logo-kai.png'; // ✅ Import logo dari assets
 
 const menuItems = [
   { path: '/', icon: Home, label: 'Dashboard' },
@@ -47,14 +48,28 @@ const Sidebar = () => {
       <div className="p-4 border-b border-blue-800">
         <div className="flex items-center justify-between">
           {!collapsed && (
-            <div>
-              <h1 className="text-lg font-bold">KAI Divre IV</h1>
-              <p className="text-sm text-blue-200">Tanjungkarang</p>
+            <div className="flex items-center space-x-3">
+              <img
+                src={logoKai}
+                alt="Logo KAI"
+                className="h-10 w-10 object-contain"
+              />
+              <div>
+                <h1 className="text-lg font-bold">KAI Divre IV</h1>
+                <p className="text-sm text-blue-200">Tanjungkarang</p>
+              </div>
             </div>
+          )}
+          {collapsed && (
+            <img
+              src={logoKai}
+              alt="Logo KAI"
+              className="h-10 w-10 mx-auto"
+            />
           )}
           <button
             onClick={() => setCollapsed(!collapsed)}
-            className="p-1 hover:bg-blue-800 rounded"
+            className="p-1 hover:bg-blue-800 rounded ml-2"
           >
             {collapsed ? <ChevronRight size={20} /> : <ChevronLeft size={20} />}
           </button>
@@ -89,7 +104,7 @@ const Sidebar = () => {
       <div className="p-4 border-t border-blue-800">
         {!collapsed && (
           <div className="text-xs text-blue-200 text-center">
-            <p>© 2024 PT KAI</p>
+            <p>© 2025 PT KAI</p>
             <p>Divisi Regional IV</p>
           </div>
         )}
