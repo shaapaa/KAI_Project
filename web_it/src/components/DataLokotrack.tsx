@@ -167,7 +167,7 @@ const DataLokotrack = () => {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 mt-11">
       {/* Header */}
       <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-8 rounded-xl">
         <h1 className="text-3xl font-bold mb-2">Data Lokotrack</h1>

@@ -72,7 +72,7 @@ const Dashboard = () => {
   ];
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 mt-11">
       {/* Welcome Section */}
       <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-8 rounded-xl">
         <div className="flex items-center justify-between">

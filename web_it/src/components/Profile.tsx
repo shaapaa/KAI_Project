@@ -5,7 +5,7 @@ import { Building, Users, Target, Award, Network, Shield } from 'lucide-react';
 
 const Profile = () => {
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 mt-11">
       {/* Header */}
       <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-8 rounded-xl">
         <h1 className="text-3xl font-bold mb-2">Profil Divisi IT</h1>
