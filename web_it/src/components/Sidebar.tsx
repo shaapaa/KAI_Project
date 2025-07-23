@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { 
@@ -38,10 +37,12 @@ const Sidebar = () => {
   const [collapsed, setCollapsed] = useState(false);
 
   return (
-    <div className={cn(
-      "bg-blue-900 text-white transition-all duration-300 flex flex-col",
-      collapsed ? "w-16" : "w-64"
-    )}>
+    <div
+      className={cn(
+        "bg-blue-900 text-white transition-all duration-300 flex flex-col fixed top-0 left-0 h-screen z-50 overflow-y-auto",
+        collapsed ? "w-16" : "w-64"
+      )}
+    >
       {/* Header */}
       <div className="p-4 border-b border-blue-800">
         <div className="flex items-center justify-between">
