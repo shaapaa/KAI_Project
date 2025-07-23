@@ -17,7 +17,7 @@ import {
   ChevronRight
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import logoKai from '@/assests/logo-kai.png'; // ✅ Import logo dari assets
+import logoKai from '@/assests/logo-kai.png'; 
 
 const menuItems = [
   { path: '/', icon: Home, label: 'Dashboard' },
