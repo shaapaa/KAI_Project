@@ -20,8 +20,13 @@ const App = () => (
           {/* Sidebar tetap di kiri */}
           <Sidebar />
 
-          {/* Main content area (bergeser ke kanan dari sidebar) */}
-          <main className="ml-64 w-full min-h-screen overflow-y-auto bg-gray-50 p-6">
+          {/* Main layout: header tetap + konten */}
+          <div className="flex-1 flex flex-col">
+            {/* Header tetap di atas */}
+            <Header />
+
+            {/* Konten utama */}
+            <main className="pt-20 px-6 pb-6 bg-gray-50 min-h-screen overflow-y-auto ml-0 md:ml-64">
             <Routes>
               <Route path="/*" element={<Index />} />
               <Route path="/404" element={<NotFound />} />
