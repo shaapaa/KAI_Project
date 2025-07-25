@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { User } from 'lucide-react';
 
 import logoBUMN from '@/assests/logo-bumn.png'; // ✅ pastikan "assets" bukan "assests"
-import logoKAI from '@/assests/kai.jpg';
+import logoKAI from '@/assests/logo-kai.png';
 
 const Header = () => {
   return (
